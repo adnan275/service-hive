@@ -1,0 +1,14 @@
+{
+  "name": "service-hive",
+  "version": "1.0.0",
+  "description": "Service Hive - Gig Marketplace",
+  "private": true,
+  "scripts": {
+    "build": "cd backend && npm install",
+    "start": "cd backend && npm start"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "devDependencies": {}
+}
