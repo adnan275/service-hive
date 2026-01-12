@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import { useNotification } from '../context/NotificationContext';
 import { motion } from 'framer-motion';
 
 const Dashboard = () => {
     const { user } = useAuth();
+    const { notificationHistory } = useNotification();
 
     const quickActions = [
         {
@@ -95,6 +97,58 @@ const Dashboard = () => {
                             </motion.div>
                         ))}
                     </div>
+
+                    {/* Recent Notifications Section */}
+                    {notificationHistory.length > 0 && (
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.2 }}
+                            className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 shadow-2xl relative overflow-hidden group"
+                        >
+                            <div className="absolute top-0 right-0 p-4 opacity-50 group-hover:opacity-100 transition-opacity">
+                                <div className="w-24 h-24 bg-gradient-to-br from-green-500/20 to-emerald-500/20 rounded-full blur-2xl"></div>
+                            </div>
+
+                            <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+                                <span className="text-3xl">🔔</span>
+                                Recent Notifications
+                            </h2>
+
+                            <div className="space-y-4 max-h-[300px] overflow-y-auto pr-2 custom-scrollbar">
+                                {notificationHistory.map((notification) => (
+                                    <motion.div
+                                        key={notification.id}
+                                        initial={{ opacity: 0, x: -20 }}
+                                        animate={{ opacity: 1, x: 0 }}
+                                        className="bg-white/5 rounded-2xl p-4 border border-white/5 flex items-start gap-4 hover:bg-white/10 transition-colors cursor-pointer"
+                                    >
+                                        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center flex-shrink-0 shadow-lg">
+                                            <span className="text-xl">🎉</span>
+                                        </div>
+                                        <div className="flex-1">
+                                            <p className="text-slate-200 font-medium leading-relaxed">
+                                                {notification.message}
+                                            </p>
+                                            <div className="flex items-center gap-4 mt-2">
+                                                <span className="text-sm text-slate-400">
+                                                    {new Date(notification.timestamp).toLocaleString()}
+                                                </span>
+                                                {notification.gigId && (
+                                                    <Link
+                                                        to={`/gigs/${notification.gigId}`}
+                                                        className="text-xs font-bold text-blue-400 hover:text-blue-300 uppercase tracking-wider flex items-center gap-1"
+                                                    >
+                                                        View Gig <span aria-hidden="true">&rarr;</span>
+                                                    </Link>
+                                                )}
+                                            </div>
+                                        </div>
+                                    </motion.div>
+                                ))}
+                            </div>
+                        </motion.div>
+                    )}
 
                     {/* Quick Tips Section */}
                     <motion.div
