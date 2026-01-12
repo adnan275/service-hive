@@ -5,7 +5,13 @@ dotenv.config();
 const { createServer } = require('http');
 const { Server } = require('socket.io');
 const setupSocket = require('./socket/socket');
+const connectDB = require('./config/db');
 const app = require('./api/index');
+
+// Connect to MongoDB
+connectDB().catch(err => {
+    console.error('MongoDB connection error:', err.message);
+});
 
 const httpServer = createServer(app);
 

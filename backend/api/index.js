@@ -2,17 +2,9 @@ const express = require('express');
 const dotenv = require('dotenv');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
-const connectDB = require('../config/db');
 const errorHandler = require('../middleware/errorHandler');
 
 dotenv.config();
-
-// Only connect to DB in production (Railway uses server.js, not serverless)
-if (process.env.NODE_ENV !== 'production') {
-    connectDB().catch(err => {
-        console.error('Database connection error:', err.message);
-    });
-}
 
 const app = express();
 
