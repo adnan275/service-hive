@@ -93,20 +93,16 @@ const GigDetails = () => {
 
     return (
         <div className="min-h-screen bg-black relative overflow-hidden">
-            {/* spacer for navbar */}
             <div className="h-32"></div>
 
             <div className="absolute top-0 left-0 right-0 h-[600px] bg-gradient-to-b from-blue-900/20 via-cyan-900/10 to-transparent pointer-events-none animate-pulse-glow" />
 
-            {/* Background elements */}
             <div className="absolute top-20 right-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl animate-float"></div>
             <div className="absolute bottom-20 left-10 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '1.5s' }}></div>
 
-            {/* Content */}
             <div className="flex justify-center px-4 sm:px-6 lg:px-8 pb-32">
                 <div className="w-full max-w-[95%] relative z-10">
                     <div className="grid lg:grid-cols-3 gap-8 lg:gap-16">
-                        {/* Gig Details Column */}
                         <motion.div
                             initial={{ opacity: 0, x: -20 }}
                             animate={{ opacity: 1, x: 0 }}

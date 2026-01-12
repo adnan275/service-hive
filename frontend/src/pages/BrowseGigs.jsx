@@ -27,10 +27,8 @@ const BrowseGigs = () => {
 
     return (
         <div className="min-h-screen bg-black relative overflow-hidden">
-            {/* spacer for navbar */}
             <div className="h-32"></div>
 
-            {/* Background elements */}
             <div className="absolute top-0 left-0 right-0 h-[600px] bg-gradient-to-b from-blue-900/20 via-cyan-900/10 to-transparent pointer-events-none animate-pulse-glow" />
 
             <div className="absolute top-20 right-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl animate-float"></div>

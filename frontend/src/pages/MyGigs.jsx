@@ -7,7 +7,7 @@ const MyGigs = () => {
     const [gigs, setGigs] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState('');
-    const [filter, setFilter] = useState('all'); // all, open, closed
+    const [filter, setFilter] = useState('all');
 
     useEffect(() => {
         fetchMyGigs();

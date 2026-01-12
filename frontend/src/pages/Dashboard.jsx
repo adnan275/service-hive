@@ -42,19 +42,15 @@ const Dashboard = () => {
 
     return (
         <div className="min-h-screen bg-black relative overflow-hidden">
-            {/* spacer for navbar */}
             <div className="h-32"></div>
 
             <div className="absolute top-0 left-0 right-0 h-[600px] bg-gradient-to-b from-blue-900/20 via-cyan-900/10 to-transparent pointer-events-none animate-pulse-glow" />
 
-            {/* Background elements */}
             <div className="absolute top-20 right-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl animate-float"></div>
             <div className="absolute bottom-20 left-10 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '1.5s' }}></div>
 
-            {/* Content */}
             <div className="flex justify-center px-4 sm:px-6 lg:px-8 pb-32">
                 <div className="w-full max-w-[95%] relative z-10 flex flex-col gap-16">
-                    {/* Welcome Section */}
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -79,7 +75,6 @@ const Dashboard = () => {
                             >
                                 <Link to={action.to} className="block group h-full">
                                     <div className={`glass-card p-8 h-full relative overflow-hidden bg-gradient-to-br ${action.gradient} ${action.hoverGradient} transition-all duration-500 rounded-3xl hover:scale-105 border border-white/5`}>
-                                        {/* Hover Effect Background */}
                                         <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                                             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
                                         </div>
@@ -108,7 +103,6 @@ const Dashboard = () => {
                         transition={{ delay: 0.5 }}
                         className="glass-card p-10 md:p-16 relative overflow-hidden group rounded-3xl border border-white/5 mt-12"
                     >
-                        {/* Shimmer Effect */}
                         <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 to-cyan-600/5 opacity-50 group-hover:opacity-100 transition-opacity duration-500"></div>
 
                         <div className="relative z-10 text-center">

@@ -7,17 +7,13 @@ const Home = () => {
 
     return (
         <div className="min-h-screen bg-black relative overflow-hidden font-inter selection:bg-blue-500/30">
-            {/* Enhanced gradient overlay */}
             <div className="absolute top-0 left-0 right-0 h-[800px] bg-gradient-to-b from-blue-900/20 via-cyan-900/10 to-transparent pointer-events-none animate-pulse-glow" />
 
-            {/* Animated background orbs */}
             <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px] animate-float opacity-70"></div>
             <div className="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] bg-cyan-600/10 rounded-full blur-[120px] animate-float" style={{ animationDelay: '2s' }}></div>
 
-            {/* Content */}
             <div className="relative z-10 flex flex-col gap-32 md:gap-48 pb-40">
 
-                {/* Hero Section */}
                 <section className="relative px-4 sm:px-6 lg:px-8 min-h-[90vh] flex items-center justify-center pt-32">
                     <div className="max-w-7xl mx-auto text-center">
                         <motion.div
@@ -26,8 +22,6 @@ const Home = () => {
                             transition={{ duration: 0.8, ease: "easeOut" }}
                             className="flex flex-col items-center"
                         >
-                            {/* Badge */}
-                            {/* Badge */}
                             <motion.div
                                 initial={{ scale: 0.9, opacity: 0 }}
                                 animate={{ scale: 1, opacity: 1 }}
@@ -39,7 +33,6 @@ const Home = () => {
                                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-200 via-white to-cyan-200 text-sm font-bold tracking-[0.2em] uppercase drop-shadow-sm">The Future of Work is Here</span>
                             </motion.div>
 
-                            {/* Main Heading */}
                             <h1 className="text-5xl sm:text-7xl lg:text-8xl font-bold text-white mb-8 leading-[1.1] tracking-tight max-w-5xl mx-auto drop-shadow-2xl">
                                 Work Without <br className="hidden sm:block" />
                                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-500 animate-gradient-x">
@@ -47,7 +40,6 @@ const Home = () => {
                                 </span>
                             </h1>
 
-                            {/* Subtitle */}
                             <motion.p
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
@@ -57,7 +49,6 @@ const Home = () => {
                                 The premium marketplace for top-tier freelancers. Connect, collaborate, and build something extraordinary with verified talent.
                             </motion.p>
 
-                            {/* CTA Buttons */}
                             <motion.div
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
@@ -90,7 +81,6 @@ const Home = () => {
                     </div>
                 </section>
 
-                {/* Stats Section */}
                 <section className="px-4 flex justify-center">
                     <div className="w-full max-w-7xl">
                         <motion.div
@@ -109,7 +99,6 @@ const Home = () => {
                     </div>
                 </section>
 
-                {/* Features Section */}
                 <section className="px-4 sm:px-6 lg:px-8">
                     <div className="w-full">
                         <motion.div
@@ -150,7 +139,6 @@ const Home = () => {
                     </div>
                 </section>
 
-                {/* CTA Section */}
                 <section className="px-4 flex justify-center">
                     <div className="w-full max-w-6xl">
                         <motion.div
@@ -160,10 +148,8 @@ const Home = () => {
                             transition={{ duration: 0.6 }}
                             className="relative overflow-hidden group rounded-[3rem] bg-gradient-to-b from-blue-900/20 to-black border border-white/10 p-16 md:p-32 text-center shadow-2xl shadow-blue-900/20"
                         >
-                            {/* Animated glow */}
                             <div className="absolute inset-0 bg-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-1000"></div>
 
-                            {/* Content */}
                             <div className="relative z-10 flex flex-col items-center">
                                 <motion.div
                                     initial={{ scale: 0.9, opacity: 0 }}

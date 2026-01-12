@@ -7,7 +7,7 @@ const MyBids = () => {
     const [bids, setBids] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState('');
-    const [filter, setFilter] = useState('all'); // all, pending, hired, rejected
+    const [filter, setFilter] = useState('all');
 
     useEffect(() => {
         fetchMyBids();
