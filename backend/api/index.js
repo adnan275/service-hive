@@ -7,7 +7,10 @@ const errorHandler = require('../middleware/errorHandler');
 
 dotenv.config();
 
-connectDB();
+// Connect to DB but don't block app initialization
+connectDB().catch(err => {
+    console.error('Database connection error:', err.message);
+});
 
 const app = express();
 
