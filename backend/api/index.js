@@ -7,10 +7,12 @@ const errorHandler = require('../middleware/errorHandler');
 
 dotenv.config();
 
-// Connect to DB but don't block app initialization
-connectDB().catch(err => {
-    console.error('Database connection error:', err.message);
-});
+// Only connect to DB in production (Railway uses server.js, not serverless)
+if (process.env.NODE_ENV !== 'production') {
+    connectDB().catch(err => {
+        console.error('Database connection error:', err.message);
+    });
+}
 
 const app = express();
 
