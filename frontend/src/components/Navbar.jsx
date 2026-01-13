@@ -20,27 +20,21 @@ const Navbar = () => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5 }}
             className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${scrolled
-                    ? 'bg-black/90 backdrop-blur-2xl border-b border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.4)]'
-                    : 'bg-transparent border-transparent'
+                ? 'bg-black/90 backdrop-blur-2xl border-b border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.4)]'
+                : 'bg-transparent border-transparent'
                 }`}
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-20">
-                    {}
+                    { }
                     <Link to="/" className="flex items-center gap-3 group">
-                        <div className="relative">
-                            {}
-                            <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-600 rounded-xl opacity-60 group-hover:opacity-100 blur-sm transition duration-500 animate-pulse-glow"></div>
-                            <div className="relative w-11 h-11 bg-gradient-to-br from-blue-600 to-cyan-500 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-[0_0_25px_rgba(59,130,246,0.6)] transition-all duration-300">
-                                <span className="text-white font-black text-xl">G</span>
-                            </div>
-                        </div>
-                        <span className="text-xl font-bold text-white tracking-tight">
+
+                        <span className="text-3xl font-bold text-white tracking-tight">
                             Gig<span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Flow</span>
                         </span>
                     </Link>
 
-                    {}
+                    { }
                     <div className="hidden md:flex items-center gap-8">
                         {user ? (
                             <>
@@ -70,7 +64,7 @@ const Navbar = () => {
                         )}
                     </div>
 
-                    {}
+                    { }
                     <button
                         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                         className="md:hidden text-white p-2 hover:bg-white/10 rounded-lg transition-colors"
@@ -86,7 +80,7 @@ const Navbar = () => {
                 </div>
             </div>
 
-            {}
+            { }
             <AnimatePresence>
                 {mobileMenuOpen && (
                     <motion.div

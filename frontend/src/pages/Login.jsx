@@ -59,7 +59,7 @@ const Login = () => {
                         transition={{ delay: 0.3 }}
                         className="text-slate-400 text-lg font-light"
                     >
-                        Sign in to your account
+                        Login in to your account
                     </motion.p>
                 </div>
 
@@ -126,10 +126,10 @@ const Login = () => {
                             {loading ? (
                                 <span className="flex items-center justify-center gap-2">
                                     <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                                    Signing in...
+                                    Logging in...
                                 </span>
                             ) : (
-                                'Sign In →'
+                                'Login In →'
                             )}
                         </motion.button>
                     </form>
