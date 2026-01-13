@@ -35,7 +35,7 @@ const Register = () => {
 
     return (
         <div className="min-h-screen flex items-center justify-center px-6 pt-20 relative overflow-hidden">
-            {}
+            { }
             <div className="absolute top-20 left-10 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-float"></div>
             <div className="absolute bottom-20 right-10 w-72 h-72 bg-cyan-500/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }}></div>
 
@@ -43,7 +43,7 @@ const Register = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
-                className="max-w-md w-full relative z-10"
+                className="max-w-2xl w-full relative z-10"
             >
                 <div className="text-center mb-10">
                     <motion.h1
@@ -68,12 +68,12 @@ const Register = () => {
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 0.4 }}
-                    className="glass-card p-10 relative overflow-hidden group"
+                    className="glass-card p-12 md:p-14 lg:p-16 relative group !overflow-visible"
                 >
-                    {}
+                    { }
                     <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 to-cyan-600/5 opacity-50 group-hover:opacity-100 transition-opacity duration-500"></div>
 
-                    <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
+                    <form onSubmit={handleSubmit} className="space-y-8 relative z-10">
                         {error && (
                             <motion.div
                                 initial={{ opacity: 0, x: -10 }}
@@ -88,7 +88,7 @@ const Register = () => {
                         )}
 
                         <div>
-                            <label className="block text-sm font-semibold text-slate-300 mb-3">
+                            <label className="block text-sm font-semibold text-slate-300 mb-3 pl-6">
                                 Full Name
                             </label>
                             <input
@@ -97,13 +97,13 @@ const Register = () => {
                                 value={formData.name}
                                 onChange={handleChange}
                                 required
-                                className="w-full"
+                                className="w-full !px-8 !py-6 rounded-2xl bg-white/5 border-2 border-white/30 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all outline-none text-white placeholder:text-slate-500 text-lg relative z-20"
                                 placeholder="John Doe"
                             />
                         </div>
 
                         <div>
-                            <label className="block text-sm font-semibold text-slate-300 mb-3">
+                            <label className="block text-sm font-semibold text-slate-300 mb-3 pl-6">
                                 Email Address
                             </label>
                             <input
@@ -112,13 +112,13 @@ const Register = () => {
                                 value={formData.email}
                                 onChange={handleChange}
                                 required
-                                className="w-full"
+                                className="w-full !px-8 !py-6 rounded-2xl bg-white/5 border-2 border-white/30 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all outline-none text-white placeholder:text-slate-500 text-lg relative z-20"
                                 placeholder="you@example.com"
                             />
                         </div>
 
                         <div>
-                            <label className="block text-sm font-semibold text-slate-300 mb-3">
+                            <label className="block text-sm font-semibold text-slate-300 mb-3 pl-6">
                                 Password
                             </label>
                             <input
@@ -127,7 +127,7 @@ const Register = () => {
                                 value={formData.password}
                                 onChange={handleChange}
                                 required
-                                className="w-full"
+                                className="w-full !px-8 !py-6 rounded-2xl bg-white/5 border-2 border-white/30 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all outline-none text-white placeholder:text-slate-500 text-lg relative z-20"
                                 placeholder="••••••••"
                             />
                         </div>

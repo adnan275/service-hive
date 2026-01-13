@@ -8,9 +8,9 @@ const GigCard = ({ gig }) => {
             animate={{ opacity: 1, y: 0 }}
             whileHover={{ y: -8, scale: 1.02 }}
             transition={{ duration: 0.3 }}
-            className="glass-card p-8 h-full flex flex-col group border border-white/5 hover:border-blue-500/40 relative overflow-hidden rounded-3xl"
+            className="glass-card !p-12 h-full flex flex-col group border-2 border-white/10 hover:border-blue-500/40 relative overflow-hidden rounded-3xl"
         >
-            {}
+            { }
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-500/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
             </div>

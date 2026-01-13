@@ -55,7 +55,7 @@ const PostGig = () => {
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 0.2 }}
-                        className="glass-card rounded-2xl p-8"
+                        className="glass-card rounded-2xl p-12 md:p-14 lg:p-16"
                     >
                         {error && (
                             <motion.div
@@ -72,7 +72,7 @@ const PostGig = () => {
 
                         <form onSubmit={handleSubmit} className="space-y-6">
                             <div>
-                                <label className="block text-sm font-semibold text-slate-300 mb-3">
+                                <label className="block text-sm font-semibold text-slate-300 mb-3 pl-6">
                                     Job Title
                                 </label>
                                 <div className="relative">
@@ -87,14 +87,14 @@ const PostGig = () => {
                                         value={formData.title}
                                         onChange={handleChange}
                                         required
-                                        className="w-full pl-12 pr-4"
+                                        className="w-full !pl-14 !pr-6 !py-6 rounded-2xl bg-white/5 border-2 border-white/30 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all outline-none text-white placeholder:text-slate-500 text-lg relative z-20"
                                         placeholder="e.g., Build a React Website"
                                     />
                                 </div>
                             </div>
 
                             <div>
-                                <label className="block text-sm font-semibold text-slate-300 mb-3">
+                                <label className="block text-sm font-semibold text-slate-300 mb-3 pl-2">
                                     Description
                                 </label>
                                 <textarea
@@ -103,7 +103,7 @@ const PostGig = () => {
                                     onChange={handleChange}
                                     required
                                     rows={8}
-                                    className="w-full resize-none"
+                                    className="w-full !p-8 rounded-2xl bg-white/5 border-2 border-white/10 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all outline-none text-white placeholder:text-slate-500 resize-none text-lg"
                                     placeholder="Describe your project requirements, timeline, and any specific skills needed..."
                                 />
                                 <p className="text-slate-500 text-xs mt-2 font-medium">
@@ -112,7 +112,7 @@ const PostGig = () => {
                             </div>
 
                             <div>
-                                <label className="block text-sm font-semibold text-slate-300 mb-3">
+                                <label className="block text-sm font-semibold text-slate-300 mb-3 pl-2">
                                     Budget ($)
                                 </label>
                                 <div className="relative">
@@ -129,7 +129,7 @@ const PostGig = () => {
                                         required
                                         min="0"
                                         step="0.01"
-                                        className="w-full pl-12 pr-4"
+                                        className="w-full !pl-14 !pr-6 !py-6 rounded-2xl bg-white/5 border-2 border-white/30 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all outline-none text-white placeholder:text-slate-500 text-lg relative z-20"
                                         placeholder="500"
                                     />
                                 </div>
@@ -159,7 +159,7 @@ const PostGig = () => {
                         initial={{ opacity: 0, x: 20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 0.3 }}
-                        className="glass-card p-8 relative overflow-hidden group"
+                        className="glass-card p-12 md:p-14 lg:p-16 relative group !overflow-visible"
                     >
                         { }
                         <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 to-cyan-600/5 opacity-50 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -174,7 +174,7 @@ const PostGig = () => {
                                 </div>
                                 <span>Preview</span>
                             </h3>
-                            <div className="bg-black/30 rounded-xl p-6 border border-white/10 backdrop-blur-sm">
+                            <div className="bg-black/30 rounded-xl p-6 border-2 border-white/10 backdrop-blur-sm">
                                 <h4 className="text-2xl font-bold text-white mb-3">
                                     {formData.title || 'Your Job Title'}
                                 </h4>
