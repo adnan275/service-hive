@@ -34,15 +34,9 @@ const register = async (req, res) => {
 
         const token = generateToken(user._id);
 
-        res.cookie('token', token, {
-            httpOnly: true,
-            secure: process.env.NODE_ENV === 'production',
-            sameSite: 'strict',
-            maxAge: 30 * 24 * 60 * 60 * 1000,
-        });
-
         res.status(201).json({
             success: true,
+            token,
             user: {
                 id: user._id,
                 name: user.name,
@@ -87,15 +81,9 @@ const login = async (req, res) => {
 
         const token = generateToken(user._id);
 
-        res.cookie('token', token, {
-            httpOnly: true,
-            secure: process.env.NODE_ENV === 'production',
-            sameSite: 'strict',
-            maxAge: 30 * 24 * 60 * 60 * 1000,
-        });
-
         res.status(200).json({
             success: true,
+            token,
             user: {
                 id: user._id,
                 name: user.name,
@@ -113,10 +101,7 @@ const login = async (req, res) => {
 
 const logout = async (req, res) => {
     try {
-        res.cookie('token', '', {
-            httpOnly: true,
-            expires: new Date(0),
-        });
+
 
         res.status(200).json({
             success: true,

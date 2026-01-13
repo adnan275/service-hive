@@ -26,6 +26,8 @@ export const AuthProvider = ({ children }) => {
                 setUser(data.user);
             }
         } catch (error) {
+            console.error('Check auth error:', error);
+            localStorage.removeItem('token');
             setUser(null);
         } finally {
             setLoading(false);
@@ -35,6 +37,7 @@ export const AuthProvider = ({ children }) => {
     const register = async (userData) => {
         const { data } = await api.post('/auth/register', userData);
         if (data.success) {
+            localStorage.setItem('token', data.token);
             setUser(data.user);
         }
         return data;
@@ -43,13 +46,14 @@ export const AuthProvider = ({ children }) => {
     const login = async (credentials) => {
         const { data } = await api.post('/auth/login', credentials);
         if (data.success) {
+            localStorage.setItem('token', data.token);
             setUser(data.user);
         }
         return data;
     };
 
-    const logout = async () => {
-        await api.post('/auth/logout');
+    const logout = () => {
+        localStorage.removeItem('token');
         setUser(null);
     };
 
